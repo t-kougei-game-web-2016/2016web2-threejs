@@ -44,8 +44,8 @@
        
       // マテリアルを作成
       var particle_material = new THREE.PointsMaterial({
-        size: 0.1, 
-        color: 0x80ff8888, 
+        size: 0.01, 
+        color: 0x80ffccaa, 
         blending: THREE.AdditiveBlending,
         transparent: true,
         depthTest: true
@@ -63,6 +63,7 @@
         requestAnimationFrame( render );
 
         mesh.rotation.y += 0.3 * clock.getDelta();
+        emitter.rotation.y -= 0.01 * clock.getDelta();
 
         renderer.render(scene, camera);
       };
