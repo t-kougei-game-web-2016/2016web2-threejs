@@ -37,9 +37,9 @@
       for(var i = 0 ; i < numParticles ; i++) {
         particle_geometry.vertices.push(
           new THREE.Vector3(
-            Math.random() * 200 - 100,
-            Math.random() * 200 - 100,
-            Math.random() * 200 - 100));
+            Math.random() * 20 - 10,
+            Math.random() * 20 - 10,
+            Math.random() * 20 - 10));
       }
        
       // マテリアルを作成
@@ -48,7 +48,7 @@
         color: 0x80ff8888, 
         blending: THREE.AdditiveBlending,
         transparent: true,
-         depthTest: false
+        depthTest: false
       });
        
       // 物体を作成
