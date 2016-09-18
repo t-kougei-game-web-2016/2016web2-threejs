@@ -63,7 +63,7 @@
         requestAnimationFrame( render );
 
         mesh.rotation.y += 0.3 * clock.getDelta();
-        emitter.rotation.y -= 0.01 * clock.getDelta();
+        emitter.rotation.y -= 0.1 * clock.getDelta();
 
         renderer.render(scene, camera);
       };
