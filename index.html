@@ -35,21 +35,24 @@
       var particle_geometry = new THREE.Geometry();
       var numParticles = 2000;
       for(var i = 0 ; i < numParticles ; i++) {
-        particle_geometry.vertices.push(new THREE.Vector3(
-          Math.random() * 2000 - 1000,
-          Math.random() * 2000 - 1000,
-          Math.random() * 2000 - 1000));
+        particle_geometry.vertices.push(
+          new THREE.Vector3(
+            Math.random() * 200 - 100,
+            Math.random() * 200 - 100,
+            Math.random() * 200 - 100));
       }
        
       // マテリアルを作成
       var particle_material = new THREE.PointsMaterial({
-        size: 10, color: 0x80ff8888, blending: THREE.AdditiveBlending,
-        transparent: true });
+        size: 3, 
+        color: 0x80ff8888, 
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+         depthTest: false
+      });
        
       // 物体を作成
-      var emitter = new THREE.PointsMaterial(particle_geometry, particle_material);
-      emitter.position = new THREE.Vector3(0, 0, -1200);
-      emitter.sortParticles = false;
+      var emitter = new THREE.Points(particle_geometry, particle_material);
       scene.add(emitter);
 
       camera.position.z = 3;
