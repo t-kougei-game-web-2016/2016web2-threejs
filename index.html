@@ -18,6 +18,13 @@
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
+      // リサイズへの対応
+      window.addEventListener('resize', function() {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      }, false );
+      
       var light = new THREE.DirectionalLight(0xcccccc);
       light.position.set(0,100,30);
       scene.add(light);
