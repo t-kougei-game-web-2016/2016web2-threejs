@@ -62,8 +62,9 @@
       var render = function () {
         requestAnimationFrame( render );
 
-        mesh.rotation.y += 0.3 * clock.getDelta();
-        emitter.rotation.y += 0.1 * clock.getDelta();
+        var delta_time = clock.getDelta();
+        mesh.rotation.y += 0.3 * delta_time;
+        emitter.rotation.y -= 0.01 * delta_time;
 
         renderer.render(scene, camera);
       };
